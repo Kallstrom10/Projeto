@@ -1,0 +1,296 @@
+/*DARK MODE*/
+:root {
+    --cor-fundo-claro: #ffffff; /* Defina a cor de fundo padrão para o tema claro */
+    --cor-texto-claro: #000000; /* Defina a cor do texto padrão para o tema claro */
+    --cor-fundo-escuro: #333333; /* Defina a cor de fundo padrão para o tema escuro */
+    --cor-texto-escuro: whitesmoke; /* Defina a cor do texto padrão para o tema escuro */
+  }
+  
+  .tema-claro {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-claro);
+  }
+  
+  .tema-escuro {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+  }
+
+  .tema-escuro body{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+  }
+
+  .tema-escuro header,
+  .tema-escuro header h2 a,
+  .tema-escuro header nav li a, .tema-escuro header nav li a:hover{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+  }
+
+  .tema-escuro header nav a#link_cadastro, .tema-escuro a#link_cadastro:hover{
+    color: var(--cor-texto-escuro);
+  }
+
+  .tema-escuro header span a{
+    color: var(--cor-texto-escuro);
+  }
+
+  .tema-escuro .contudo-1 h2,
+  .tema-escuro .contudo-2 h2,
+  .tema-escuro .contudo-3 h2,
+  .tema-escuro .contudo-4 h2{
+    color: var(--cor-texto-claro);
+  }
+
+  .tema-escuro .ropade .conteudo-1 h2{
+    color: var(--cor-texto-claro);
+  }
+
+  .tema-escuro header nav .dropbuttom_content a{
+    color: var(--cor-texto-claro);
+  }
+
+  .tema-escuro #scrollToTopBtn{
+    background-color: whitesmoke;
+    color: black;
+  }
+
+  /*PARTE DO SAMSUNG E IPHONE*/
+
+  .tema-escuro section{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+  }
+
+
+  /*PARTE DO SAMSUNG E IPHONE*/
+
+  /*PARTE UTP*/
+
+  .tema-escuro .utp_content1 h2,
+  .tema-escuro .utp_content1 p, 
+  .tema-escuro .utp_content2 h2, 
+  .tema-escuro .utp_content2 p,
+  .tema-escuro .utp_content3 h2, 
+  .tema-escuro .utp_content3 p,
+  .tema-escuro .utp_content5, 
+  .tema-escuro .utp_content5 ul li, 
+  .tema-escuro .utp_content5 p,
+  .tema-escuro .utp_content5 strong,
+  .tema-escuro .utp_content6 h2,
+  .tema-escuro .utp_content6 p, .tema-escuro .utp_content6 ul li{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+  }
+
+  /*PARTE UTP*/
+
+  /*PARTE DOCK*/
+
+  .tema-escuro div h2,
+  .tema-escuro div ul li,
+  .tema-escuro div ul li p,
+  .tema-escuro .dock_principal1 p,
+  .tema-escuro .dock_content2 p{
+    color: var(--cor-texto-escuro);
+  }
+
+
+
+  /*PARTE DOCK*/
+
+  /*PARTE HUB*/
+
+  .tema-escuro .hub_principal1 p,
+  .tema-escuro .hub_principal1 strong{
+    color: var(--cor-texto-escuro);
+  }
+
+
+
+
+  /*PARTE HUB*/
+
+  /*PARTE INTEL EVO*/
+
+    .tema-escuro .evo_principal1 p{
+        color: var(--cor-texto-escuro);
+    }
+
+    .tema-escuro .evo_content9 hr{
+      margin: 5px 8px;
+    }
+
+    .tema-escuro .evo_content10 hr{
+      margin: 5px 8px;
+    }
+
+
+  /*PARTE INTEL EVO*/
+
+
+  /*PARTE INTEL PROC*/
+
+    .tema-escuro .intel_principal1 p,
+    .tema-escuro .intel_content3 p,
+    .tema-escuro .intel_content5 p,
+    .tema-escuro .intel_content7 p,
+    .tema-escuro .intel_content9 p, .tema-escuro .intel_content9 p em,
+    .tema-escuro .intel_content9_1 strong,
+    .tema-escuro .intel_content9_2 p{
+        color: var(--cor-texto-escuro);
+    }
+
+
+  /* PARTE INTEL PROC */
+
+  /*PARTE ROUER*/
+
+  .tema-escuro .router_content1 p,
+  .tema-escuro .router_content3 p,
+  .tema-escuro .router_content5 p{
+    color: var(--cor-texto-escuro);
+  }
+
+  .tema-escuro .router_content3_1 ul hr{
+    border: solid 1px black;
+    margin: 4px;
+  }
+
+
+  /* PARTE ROUTER */
+
+  /* PARTE SSD */
+
+    .tema-escuro .ssd_principal1 p,
+    .tema-escuro .ssd_principal2 p,
+    .tema-escuro .ssd_principal3 p,
+    .tema-escuro .ssd_principal4 p{
+        color: var(--cor-texto-escuro);
+    }
+
+    .tema-escuro .section1{
+        background-color: grey;
+    }
+
+    .tema-escuro .section1 h2{
+        color: var(--cor-texto-claro);
+    }
+
+    .tema-escuro .section1 .intel_hr{
+        margin: 15px 10px;
+    }
+
+    .tema-escuro .ssd_principal9 p,
+    .tema-escuro .ssd_principal10 p,
+    .tema-escuro .ssd_principal11 p,
+    .tema-escuro .ssd_principal12 p,
+    .tema-escuro .ssd_principal13 p,
+    .tema-escuro .ssd_principal14 p,
+    .tema-escuro .ssd_principal15 p,
+    .tema-escuro .ssd_principal16 p{
+        color: var(--cor-texto-escuro);
+    }
+
+    .tema-escuro section .ssd_hr1{
+        margin: 15px 10px;
+        background-color: #333333;
+        border: none;
+    }
+
+    .tema-escuro .section2{
+        background-color: grey;
+    }
+
+    .tema-escuro .section2 .intel_hr{
+        margin: 15px 10px;
+    }
+
+    .tema-escuro .ssd_content21 p{
+        color: var(--cor-texto-escuro);
+    }
+
+  /* PARTE SSD */
+
+  /* PARTE USB */
+
+    .tema-escuro .usb_principal1 p,
+    .tema-escuro .usb_principal1 em{
+        color: var(--cor-texto-escuro);
+    }
+
+    .tema-escuro .usb_section{
+        background-color: grey;
+    }
+
+    .tema-escuro .usb_section h2{
+        color: var(--cor-texto-claro);
+    }
+
+    .tema-escuro .usb_content1 p,
+    .tema-escuro .usb_content3 p{
+        color: var(--cor-texto-escuro);
+    }
+
+    .tema-escuro .usb_content4 p{
+        color: var(--cor-texto-escuro);
+    }
+
+    .tema-escuro .usb_content4_1 hr{
+        margin: 15px 10px;
+        border: solid 1px black;
+    }
+
+
+
+  /* PARTE USB */
+
+
+  /*PARTE DO SOBRE*/
+
+  .tema-escuro .main_about, .tema-escuro .titulo_about, .tema-escuro .subtitulo_about, .tema-escuro #section_about p{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+  }
+
+  /*PARTE DO SOBRE*/
+
+  /*PARTE DOS COMENTÁRIOS*/
+
+  .tema-escuro .conteudo_com1 .h1_com, .tema-escuro .conteudo_com2 .h1_com{
+    color:  var(--cor-texto-escuro);
+  }
+
+  .tema-escuro textarea, .tema-escuro textarea:hover{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+    outline: none;
+  }
+
+  .tema-escuro select, .tema-escuro select option{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+    outline: none;
+  }
+
+  .tema-escuro button{
+    color: red;
+  }
+
+  .tema-escuro button:hover{
+    border: none;
+  }
+  
+  /*PARTE DOS COMENTÁRIOS*/
+
+
+/*DARK MODE*/
+
+.tema-escuro .menu-mobile{
+  background-color: #333333;
+}
+
+.tema-escuro .menu-mobile li a{
+  color: var(--cor-texto-escuro);
+}

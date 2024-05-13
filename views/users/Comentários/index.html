@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../public/assets/css/style.css">
+    <link rel="stylesheet" href="../../../public/assets/css/style_dark-mode.css">
+    <script src="../../../public/assets/js/script_dark_mode.js" defer></script>
+    <title>Comentários</title>
+</head>
+<body id="elemento" class="tema-claro">
+
+   <!-- INÍCIO DO HEADER -->
+   <header class="tema-claro" id="elemento">
+    <nav>
+        <h2 class="home"><a href="../Página Inicial/index.html">PAULINFORMATION</a></h2>
+        <ul>
+            <li><a  href="../Página Inicial/index.html">Home</a></li>
+            <li><a href="../About/index.html">About</a></li>
+            <li><a href="../Login/index.html">Login</a></li>
+            <span class="dropdown">
+                <li><a class="dropbuttom" href="#">Menu</a></li>
+                <div class="dropbuttom_content">
+                    <a href="../Apple vs Samsung/index.html">Apple vs Samsung</a>
+                    <a href="../Cabos UTP/index.html">Cabos UTP</a>
+                    <a href="../Dock Staion/index.html">Dockstation</a>
+                    <a href="../Hubs vs Switches/index.html">Hubs vs. Switches</a>
+                    <a href="../INTEL EVO/index.html">INTEL EVO</a>
+                    <a href="../Processadores INTEL/index.html">Precessadores INTEL</a>
+                    <a href="../Roteadores/index.html">Roteadores Wi-Fi</a>
+                    <a href="../SSD vs HDD vs eMMC/index.html">SSD vs HDD vs eMMC</a>
+                    <a href="../Tipos de cabos USB/index.html">Tipos de USB</a>
+                    <hr>
+                    <a href="../Comentários/index.html">Comente</a>
+                </div>
+            </span>
+        </ul>
+
+        <span id="link_cadastro"><a href="../Cadastro/index.html">Cadastro</a></span>
+
+        <span>
+
+           <button id="change_theme" onclick="alternarTema()">Alterar Tema</button>
+    
+        </span>
+    
+    </nav>
+</header>
+<!-- FIM DO HEADER -->
+
+    <!-- INÍCIO DO MAIN -->
+    
+    <div class="conteudo_com1">
+
+
+
+            <form action="/Coment%C3%A1rios" method="POST">
+            <label for="tema"><h1 class="h1_com">Comente acerca de um tema:</h1></label>
+            <select name="tema">
+                <option>Apple vs Samsung</option>
+                <option>Cabos UTP</option>
+                <option>Dockstation</option>
+                <option>Hubs vs Switches</option>
+                <option>INTEL EVO</option>
+                <option>Processadores INTEL</option>
+                <option>Roteadores Wi-Fi</option>
+                <option>SSD vs HDD vs eMMC</option>
+                <option>Tipos de USB</option>
+            </select>
+
+            <label for="comentario"><textarea name="comentario" id="comentario" cols="30" rows="12" required></textarea></label> <br>
+
+            <input type="reset" class="input1"value="Limpar">
+            <input type="submit" class="input2" onclick="alert('Sucesso ao comentar.')" value="Comentar">
+
+        </form>
+        
+    </div>
+
+    <!-- ************************************* -->
+
+
+    <!-- FIM DO MAIN -->
+
+    <button id="scrollToTopBtn" class="tema-claro">&#9650;</button>
+
+     <!-- INÍCIO DO FOOTER -->
+     <footer class="rodape_com">
+
+        <div class="conteudo-1">
+            <h2>PRINCIPAL</h2>
+            
+            <ul>
+                <li><a href="../Página Inicial/index.html">Home</a></li>
+                <li><a href="../Login/index.html">Login</a></li>
+                <li><a href="../Cadastro/index.html">Cadastre-se</a></li>
+                <li><a href="../About/index.html">About</a></li>
+                <li><a href="../Comentários/index.html">Faça o seu comentário</a></li>
+            </ul>
+        </div>
+
+        <div class="conteudo-2">
+            <h2>TEMAS</h2>
+
+            <ul>
+                <li><a href="../Apple vs Samsung/index.html">Apple vs Samsung</a></li>
+                <li><a href="../Cabos UTP/index.html">Cabos UTP</a></li>
+                <li><a href="../Dock Staion/index.html">Dockstation</a></li>
+                <li><a href="../Hubs vs Switches/index.html">Hubs vs. Switches</a></li>
+                <li><a href="../INTEL EVO/index.html">INTEL EVO</a></li>
+            </ul>
+
+        </div>
+
+        <div class="conteudo-3">
+            <h2>TEMAS</h2>
+
+            <ul>
+                <li><a href="../Processadores INTEL/index.html">Precessadores INTEL</a></li>
+                <li><a href="../Roteadores/index.html">Roteadores Wi-Fi</a></li>
+                <li><a href="../SSD vs HDD vs eMMC/index.html">SSD vs HDD vs eMMC</a></li>
+                <li><a href="../Tipos de cabos USB/index.html">Tipos de USB</a></li>
+            </ul>
+
+        </div>
+
+        <div class="conteudo-4">
+            <h2>CONTACT US</h2>
+
+            <ul>
+                <li><a href="#">WhatsApp</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">X</a></li>
+            </ul>
+
+        </div>
+
+    </footer>
+
+    <div class="copy_rodape">
+        <p>&copy; 2024 PAULINFORMATION. Todos os direitos reservados.</p>
+    </div>
+    <!-- FIM DO FOOTER -->
+
+</body>
+</html>
+    

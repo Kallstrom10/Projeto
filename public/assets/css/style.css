@@ -1,0 +1,2117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.5s;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* #scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #8b0000;
+    opacity: 0;
+    transition: opacity 1s ease; 
+}
+
+#scrollToTopBtn.show {
+    opacity: 1; 
+} */
+
+#scrollToTopBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Inicialmente oculto até que a pessoa role a página */
+    padding: 15px;
+    background-color: #000;
+    padding: 10px;
+    color: whitesmoke;
+    border-radius: 8px;
+}
+
+/* #scrollToTopBtn.show{
+    opacity: 1;
+} */
+
+header{
+    top: 0;
+    left: 0;
+    height: 90px;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 10px 15px 0 black;
+}
+
+.home:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+#link_cadastro{
+    border: dashed 2px black;
+    padding: 10px;
+    margin-left: 120px;
+}
+
+#link_cadastro:hover{
+    background-color: rgb(255, 0, 0);
+    transition: 0.5s;
+    box-shadow: 5px 8px black;
+}
+
+#link_cadastro a:hover{
+    color: whitesmoke;
+    transition: 0.5s;
+}
+
+#change_theme{
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: red;
+    cursor: pointer;
+    font-weight: bolder;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+#change_theme:hover{
+    border: solid 1px black;
+    transition: 1s;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 15px;
+}
+
+ /*DROP-DOWN*/
+ 
+.dropbuttom{
+    color: red;
+}
+
+.dropbuttom_content{
+    display: none;
+    position: absolute;
+    background:  linear-gradient(to bottom, white, darkgrey);
+    min-width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 3);
+    border-radius: 8px;
+    opacity: 0;
+    z-index: 3;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.dropbuttom_content  a{
+    color:  black;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-weight: bolder;
+}
+
+@keyframes moveToBottom {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.dropdown:hover .dropbuttom_content{
+    display: block;
+    opacity: 1;
+    max-height: 500px;
+    animation: moveToBottom 0.5s ease-in-out;
+    padding: 4px 0;
+}
+
+.dropbuttom_content a:hover{
+    transition: 0.3s;
+    box-shadow: 0 4px red;
+}
+
+/*FIM DROP-DOWN*/
+
+nav{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 10px 60px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul{
+    display: flex;
+    margin-left: 180px; 
+}
+
+header nav ul li{
+    padding-inline: 10px;
+    margin-inline: 5px;
+}
+
+header nav ul li a{
+    color: rgb(255, 0, 0);
+}
+
+header nav ul li a:hover{
+    color: #000;
+    transition: 0.5s;
+    box-shadow: 0 4px rgb(255, 0, 0);
+}
+
+main{
+    margin-top: 50px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 15px;
+}
+
+
+.titulos{
+    margin-top: 30px;
+}
+
+.titulo{
+    width: 550px;
+    text-align: justify;
+    color: whitesmoke;
+    margin-top: 40px;
+}
+
+.subtitulo{
+    width: 550px;
+    text-align: justify;
+    margin-top: 30px;
+    color: whitesmoke;
+}
+
+.conteudo_main{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
+}
+
+.image_main{
+    margin-top: 50px;
+    box-shadow: 10px 10px black;
+}
+
+
+.newsletter{
+    background-color: red;
+    border-radius: 10px;
+    margin: 20px 330px;
+    height: 75px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.text_newsletter{
+    margin: 5px 10px;
+    font-weight: bolder;
+}
+
+.email_newsletter{
+    padding-right: 100px;
+    border-radius: 15px;
+    height: 35px;
+    margin-left: 170px;
+    background-color: darkgray;
+    font-weight: bolder;
+    padding: 5px;
+    width: 250px;
+    outline: none;
+}
+
+.email_newsletter:hover{
+    transform: scaleX(1.1);
+    margin-right: 8px;
+    outline: none;
+}
+
+.botao_newsletter{
+    border-radius: 15px;
+    height: 35px;
+    cursor: pointer;
+    margin-right: 60px;
+    background-color: #000;
+    color: whitesmoke;
+    padding: 5px;
+}
+
+.botao_newsletter:hover{
+    background-color: white;
+    color: #000;
+    transition: 0.5s;
+    font-weight: 500;
+    transform: scaleY(1.1);
+}
+
+.rodape{
+    background: linear-gradient(to bottom, #8b0000, #000);
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    height: 300px;
+    border-radius: 15px 15px 0 0;
+}
+
+
+/*LINKS DO RODAPÉ*/
+.conteudo-1{
+    margin-top: 50px;
+}
+
+.conteudo-2{
+    margin-top: 50px;
+}
+
+.conteudo-3{
+    margin-top: 50px;
+}
+
+.conteudo-4{
+    margin-top: 50px;
+}
+
+.rodape div ul{
+    margin-top: 10px;
+}
+
+.rodape div ul li{
+    padding: 3px;
+}
+
+.rodape div ul li a{
+    color: whitesmoke;
+}
+
+.rodape div ul li a:hover{
+    transition: 0.3s;
+    box-shadow: 4px 4px gray;
+}
+
+.copy_rodape{
+    background-color: #000;
+    height: 50px;
+}
+
+.copy_rodape p{
+    color: white;
+    text-align: center;
+}
+
+
+/*FIM DA PÁGINA INICIAL*/
+
+
+
+
+
+
+
+/*APPLE VS SAMSUNG*/
+
+/*APPLE*/
+
+.conteudo_principal_iphone{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+}
+
+h3{
+    text-align: center;
+}
+
+.h2{
+    text-align: center;
+    margin-top: 55px;
+}
+
+.hr{
+    height: 5px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+    border: solid 1px rgb(255, 0, 0);
+    margin: 8px 10px 8px 10px;
+}
+
+.iphone_content{
+    width: 500px;
+    border-radius: 15px;
+    font-size: 1.8em;
+    text-align: justify;
+    padding: 8px;
+}
+
+.iphone_image{
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+.iphone_image:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.carac_iphone{
+    border: solid 2px black;
+    border-radius: 15px;
+    margin: 20px auto 20px auto;
+    width: 800px;
+    padding: 10px;
+    text-align: center;
+}
+
+h4{
+    color: rgb(255, 0, 0);
+}
+
+/*FIM APPLE*/
+
+
+/*SAMSUNG*/
+
+.conteudo_principal_samsung{
+    background-color: grey;
+    margin-top: 50px;
+    border-radius: 15px;
+    padding-bottom: 50px;
+}
+
+.carac_samsung{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+}
+
+.samsung_content{
+    width: 500px;
+    border-radius: 15px;
+    font-size: 1.6em;
+    text-align: justify;
+    padding: 8px;
+    margin-top: 15px;
+    height: 580px;
+}
+
+.section div p{
+    color: whitesmoke;
+}
+
+.hr_s{
+    background-color: #000;
+    height: 4px;
+    border-radius: 10px;
+    border: solid 1px black;
+    margin: 8px 10px 8px 10px;
+}
+
+.samsung_image{
+    margin-top: 100px;
+    border-radius: 15px;
+}
+
+.samsung_image:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.samsung_carac{
+    border: solid 2px black;
+    border-radius: 15px;
+    margin: 20px auto 0 auto;
+    width: 800px;
+    padding: 10px;
+    text-align: center;
+}
+
+/*FIM SAMSUNG*/
+
+
+
+/*VEREDITO*/
+.vere_principal{
+    background-color: #8b0000;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 180px;
+    margin-top: 30px;
+    border-radius: 15px 15px 0 0;
+}
+
+.vere_content{
+    border-radius: 15px;
+    width: 500px;
+    text-align: justify;
+    padding: 8px;
+    font-size: 1.1em;
+}
+
+.agra_content{
+    border-radius: 15px;
+    width: 500px;
+    text-align: justify;
+    padding: 8px;
+    height: 120px;
+    font-size: 1.1em;
+}
+
+.vh2{
+    text-align: center;
+}
+
+.rodape_sam_iph{
+    background: linear-gradient(to bottom, #8b0000, #000);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    height: 300px;
+}
+
+.rodape_sam_iph div ul{
+    margin-top: 10px;
+}
+
+.rodape_sam_iph div ul li{
+    padding: 3px;
+}
+
+.rodape_sam_iph div ul li a{
+    color: whitesmoke;
+}
+
+.rodape_sam_iph div ul li a:hover{
+    transition: 0.3s;
+    box-shadow: 4px 4px gray;
+}
+
+.copy_rodape_sam{
+    background-color: #000;
+    height: 50px;
+}
+
+.copy_rodape_sam p{
+    color: white;
+    text-align: center;
+}
+
+/*FIM VEREDITO*/
+
+
+
+
+/*CABOS UTP*/
+
+.utp_principal1{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+}
+
+.utp_image{
+    margin-top: 110px;
+    box-shadow: 10px 10px  #000;
+}
+
+.utp_content1{
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 500px;
+    padding: 8px;
+    text-align: justify;
+    font-size: 1.2em;
+    margin: 5px;
+}
+
+.utp_content2{
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 500px;
+    padding: 8px;
+    text-align: justify;
+    font-size: 1.1em;
+    margin: 5px;
+}
+
+.utp_content3{
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 500px;
+    padding: 8px;
+    text-align: justify;
+    font-size: 1.3em;
+    margin: 5px;
+}
+
+.utph2{
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+.utp_p{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.utp_principal2{
+    background-color: red;
+    height: 900px;
+    border-radius: 15px;
+}
+
+.utp_principal3{
+    margin: 5px 0 20px 0;
+    border-radius: 15px;
+}
+
+.utp_content5{
+    background-color: white;
+    margin-top: 10px;
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 1000px;
+    margin-left: 220px;
+}
+
+.utp_hr{
+    background-color: #000;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 8px 10px 8px 10px;
+}
+
+.utp_content6{
+    padding: 10px;
+    width: 1300px;
+    margin-left: 80px;
+    text-align: justify;
+}
+
+.rodape_utp{
+    background: linear-gradient(to bottom, #8b0000, #000);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    height: 300px;
+    border-radius: 15px 15px 0 0;
+}
+
+.rodape_utp div ul{
+    margin-top: 10px;
+}
+
+.rodape_utp div ul li{
+    padding: 3px;
+}
+
+.rodape_utp div ul li a{
+    color: whitesmoke;
+}
+
+.rodape_utp div ul li a:hover{
+    transition: 0.3s;
+    box-shadow: 4px 4px gray;
+}
+
+.copy_rodape_utp{
+    background-color: #000;
+    height: 50px;
+}
+
+.copy_rodape_utp p{
+    color: white;
+    text-align: center;
+}
+
+/*FIM CABOS UTP*/
+
+
+
+/*DOCKSTATION*/
+
+.titulos_dock{
+    margin-top: 80px;
+}
+
+.dock_principal1{
+    margin: 40px auto 40px auto;
+    text-align: justify;
+}
+
+.dock_content1{
+    width: 1300px;
+    text-align: justify;
+    margin: 20px auto 0 auto;
+}
+
+.dock_principal2{
+    width: 1300px;
+    text-align: justify;
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 40px auto 40px auto;
+}
+
+.dock_hr{
+    background-color: black;
+    border: solid 1px black;
+    margin: 8px 10px 8px 10px;
+}
+
+.dock_li{
+    color: #000;
+    text-align: center;
+    font-weight: bolder;
+    padding: 4px;
+}
+
+.rodape_dock{
+    background: linear-gradient(to bottom, #8b0000, #000);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    height: 300px;
+}
+
+.rodape_dock div ul{
+    margin-top: 10px;
+}
+
+.rodape_dock div ul li{
+    padding: 3px;
+}
+
+.rodape_dock div ul li a{
+    color: whitesmoke;
+}
+
+.rodape_dock div ul li a:hover{
+    transition: 0.3s;
+    box-shadow: 4px 4px gray;
+}
+
+.copy_rodape_dock{
+    background-color: #000;
+    height: 50px;
+}
+
+.copy_rodape_dock p{
+    color: white;
+    text-align: center;
+}
+
+
+/*FIM DOSCKSTATION*/
+
+
+
+/*HUB VS SWITCHES*/
+
+.hub_principal1{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+}
+
+.hub_h2{
+    text-align: center;
+}
+
+.hub_content1{
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 550px;
+    font-size: 1.1em;
+    margin: 5px;
+    text-align: justify;
+}
+
+.hub_content2{
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 550px;
+    font-size: 1.1em;
+    margin: 5px;
+    text-align: justify;
+}
+
+.hub_content3{
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 550px;
+    font-size: 1.1em;
+    margin: 5px;
+    text-align: justify;
+}
+
+.hub_hr{
+    padding: 2px;
+    border: solid 1px black;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.hub_principal2{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 180px;
+    background-color: grey;
+    border-radius: 15px;
+    margin-bottom: 4px;
+}
+
+.hub_content4{
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 550px;
+    font-size: 1.1em;
+    margin: 5px;
+    text-align: justify;
+}
+
+.hub_content5{
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 550px;
+    font-size: 1.1em;
+    margin: 5px;
+    text-align: justify;
+}
+
+.rodape_hub{
+    background: linear-gradient(to bottom, #8b0000, #000);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    height: 300px;
+}
+
+.rodape_hub div ul{
+    margin-top: 10px;
+}
+
+.rodape_hub div ul li{
+    padding: 3px;
+}
+
+.rodape_hub div ul li a{
+    color: whitesmoke;
+}
+
+.rodape_hub div ul li a:hover{
+    transition: 0.3s;
+    box-shadow: 4px 4px gray;
+}
+
+.copy_rodape_hub{
+    background-color: #000;
+    height: 50px;
+}
+
+.copy_rodape_hub p{
+    color: white;
+    text-align: center;
+}
+
+/*FIM HUB VS SWITCHES*/
+
+
+/*INTEL EVO*/
+
+.titulos_evo{
+    margin-top: 50px;
+}
+
+.subtitulo_evo{
+    width: 700px;
+    text-align: justify;
+    margin-top: 30px;
+    color: whitesmoke;
+}
+
+.conteudo_main_evo{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px;
+}
+
+.evo_principal1{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.evo_content1{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 40px;
+    font-size: 1.2em;
+}
+
+
+.evo_content2{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 920px;
+    font-size: 1.2em;
+    background-color: grey;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.evo_content3{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 40px;
+    font-size: 1.2em;
+}
+
+.evo_content4{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 920px;
+    font-size: 1.2em;
+    background-color: grey;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.evo_principal2{
+    margin-top: 40px;
+    text-align: center;
+    background-color: grey;
+    height: 1190px;
+    border-radius: 15px;
+}
+
+.evo_content5{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 40px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.evo_content6{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 920px;
+    font-size: 1.2em;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.evo_content7{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 40px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.evo_content8{
+    width: 500px;
+    margin-top: 40px;
+    text-align: justify;
+    margin-left: 920px;
+    font-size: 1.2em;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.evo_h2{
+    padding-bottom: 30px;
+}
+
+#h2_evo{
+    padding-top: 20px;
+}
+
+.evo_content9{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.evo_content9_1{
+    width: 600px;
+    margin-top: 20px;
+    margin-left: 450px;
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.evo_principal4{
+    margin: 40px 0 4px 0;
+    background-color: grey;
+    font-weight: 500;
+    padding-bottom: 80px;
+    border-radius: 15px;
+}
+
+.evo_h2_1{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.evo_content10{
+    margin-top: 20px;
+    text-align: center;
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 10px;
+    width: 600px;
+    margin-left: 450px;
+}
+
+.evo_hr{
+    border: solid 1px black;
+}
+
+.rodape_evo{
+    background: linear-gradient(to bottom, #8b0000, #000);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    height: 300px;
+}
+
+.rodape_evo div ul{
+    margin-top: 10px;
+}
+
+.rodape_evo div ul li{
+    padding: 3px;
+}
+
+.rodape_evo div ul li a{
+    color: whitesmoke;
+}
+
+.rodape_evo div ul li a:hover{
+    transition: 0.3s;
+    box-shadow: 4px 4px gray;
+}
+
+.copy_rodape_evo{
+    background-color: #000;
+    height: 50px;
+}
+
+.copy_rodape_evo p{
+    color: white;
+    text-align: center;
+}
+
+#hr_footer{
+    border: solid 1px white;
+    margin: 0 10px 0 10px;
+}
+
+/*FIM INTEL EVO*/
+
+/*PROC. INTEL*/
+
+.conteudo_main_intel{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 100px;
+    height: 600px;
+}
+
+.image_main_intel{
+    margin-top: 180px;
+    box-shadow: 10px 10px black;   
+}
+
+.intel_h2{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.intel_content1{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-size: 1.2em;
+}
+
+.intel_principal2{
+    background-color: grey;
+    border-radius: 15px;
+    height: 470px;
+}
+
+.intel_h2_1{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.intel_content2{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.intel_hr{
+    border: solid 1px black;
+    margin: 10px;
+}
+
+.intel_content2_1{
+    margin: 20px auto;
+    font-size: 1.2em;
+    font-weight: 500;
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 500px;
+    padding: 10px;
+
+}
+
+.intel_span{
+    color: white;
+}
+
+.intel_content3{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.intel_principal4{
+    background: linear-gradient(to bottom, grey, #fff);
+    border-radius: 15px;
+    height: 250px;
+}
+
+.intel_content4{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.intel_content5{
+    text-align: justify;
+    margin-top: 40px;
+    width: 1300px;
+    margin-left: 90px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.intel_principal6{
+    background: linear-gradient(to bottom, grey, #fff);
+    border-radius: 15px;
+    height: 250px;
+}
+
+.intel_content6{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+
+.intel_content7{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.intel_principal8{
+    background: linear-gradient(to bottom, grey, #fff);
+    border-radius: 15px;
+    height: 290px;
+}
+
+.intel_content8{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.intel_content9{
+    text-align: justify;
+    margin: 40px auto;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.intel_content9_1{
+    margin: 20px auto;
+    font-size: 1.2em;
+    font-weight: 500;
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 1100px;
+    padding: 10px; 
+}
+
+.intel_content9_2{
+    margin: 20px auto;
+    font-size: 1.2em;
+    font-weight: 500;
+    width: 1300px;
+    padding-bottom: 30px;
+}
+
+/*FIM PROC. INTEL*/
+
+
+/*ROUTER*/
+
+.router_principal1{
+    margin: 40px auto;
+}
+
+.router_hr{
+    text-align: center;
+}
+
+.router_content1{
+    margin: 20px auto;
+    text-align: justify;
+    width: 1300px;
+    margin-left: 90px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.router_principal2{
+    background: linear-gradient(to bottom, grey, white);
+    border-radius: 15px;
+    margin: 40px auto;
+    padding: 30px 0;
+}
+
+.router_content2{
+    margin: 20px auto;
+    text-align: justify;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.router_principal3{
+    margin-top: 40px;
+}
+
+.router_content3{
+    margin: 20px auto;
+    text-align: justify;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.router_content3_1{
+    margin: 20px auto;
+    text-align: center;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 800px;
+    padding: 10px;
+}
+
+.router_principal4{
+    background: linear-gradient(to bottom, grey, white);
+    border-radius: 15px;
+    margin-top: 40px;
+    padding: 30px 0;
+}
+
+.router_content4{
+    margin: 20px auto;
+    text-align: justify;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.router_principal5{
+    margin: 40px auto;
+    border-radius: 15px 0 0 0;
+    padding: 20px 0 30px 0;
+}
+
+.router_content5{
+    margin: 20px auto;
+    text-align: justify;
+    width: 1300px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+/*FIM ROUTER*/
+
+/*SSD, HDD E EMMC*/
+
+.titulos_ssd{
+    margin-top: 80px;
+}
+
+.ssd_principal1{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+    border-radius: 0 0 15px 0;
+}
+
+.ssd_h2{
+    text-align: center;
+}
+
+.ssd_content1{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.hdd_image1{
+    margin-top: 50px;
+}
+
+.hdd_image1:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal2{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content2{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.ssd_principal3{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content3{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.ssd_principal4{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content4{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.hdd_image2:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.hdd_image3:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.hdd_image4{
+    margin-top: 70px;
+}
+
+.hdd_image4:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal5{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.section1{
+    background-color: grey;
+    color: #000;
+    border-radius: 15px;
+}
+
+.ssd_content5{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.ssd_image1{
+    margin-top: 150px;
+}
+
+.ssd_image1:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal6{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+    color: #000;
+}
+
+.ssd_content6{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.ssd_hr{
+    margin: 0 10px 0 10px;
+    border: solid 1px black;
+}
+
+.ssd_hr1{
+    border: solid 2px white;
+    margin: 10px;
+}
+
+.ssd_principal7{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content7{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.ssd_principal8{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content8{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.ssd_image2:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_image3:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_image4{
+    margin-top: 110px;
+}
+
+.ssd_image4:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal9{
+    margin-top: 40px;
+}
+
+.ssd_content9{
+    margin: 20px auto 0 auto;
+    width: 1400px;
+    text-align: center;
+}
+
+.ssd_principal10{
+    margin-top: 40px;
+}
+
+.ssd_content10{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    text-align: justify;
+}
+
+.ssd_principal11{
+    margin-top: 40px;
+}
+
+.ssd_content11{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    text-align: justify;
+}
+
+.ssd_principal12{
+    margin-top: 40px;
+}
+
+.ssd_content12{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    text-align: justify;
+}
+
+.ssd_principal13{
+    margin-top: 40px;
+}
+
+.ssd_content13{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    text-align: justify;
+}
+
+.ssd_principal14{
+    margin-top: 40px;
+}
+
+.ssd_content14{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    text-align: justify;
+}
+
+.ssd_principal15{
+    margin-top: 40px;
+}
+
+.ssd_content15{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    text-align: justify;
+}
+
+.ssd_principal16{
+    margin-top: 40px;
+}
+
+.ssd_content16{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.section2{
+    background-color: grey;
+    border-radius: 15px;
+}
+
+.ssd_principal17{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content17{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.emmc_image1{
+    margin-top: 60px;
+}
+
+.emmc_image1:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal18{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content18{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.emmc_image2{
+    margin-top: 160px;
+}
+
+.emmc_image2:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal19{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content19{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.emmc_image3{
+    margin-top: 30px;
+}
+
+.emmc_image3:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal20{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 200px;
+}
+
+.ssd_content20{
+    width: 500px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.emmc_image4{
+    margin-top: 30px;
+}
+
+.emmc_image4:hover{
+    box-shadow: 10px 10px #000;
+}
+
+.ssd_principal21{
+    margin-top: 40px;
+}
+
+.ssd_content21{
+    width: 1300px;
+    margin: 20px auto 0 auto;
+    text-align: justify;
+    padding-bottom: 40px;
+}
+
+
+
+/*FIM SSD, HDD E EMMC*/
+
+
+/*USB*/
+
+.image_main_usb{
+    margin-top: 100px;
+    box-shadow: 10px 10px #000;
+}
+
+.usb_principal1{
+    margin: 40px 0;
+    text-align: center;
+}
+
+.usb_content1{
+    width: 1300px;
+    text-align: justify;
+    margin: 20px auto 0 auto;
+    padding-bottom: 40px;
+}
+
+.usb_section{
+    background-color: grey;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+.usb_h2{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.usb_content2{
+    margin: 20px auto 0 auto;
+    width: 1300px;
+    padding-bottom: 20px;
+}
+
+.ssd_hr11{
+    border: solid 2px grey;
+    margin: 10px;
+}
+
+.usb_content3{
+    margin: 20px auto;
+    padding-top: 20px;
+    width: 1300px;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.usb_content4{
+    margin: 20px auto 0 auto;
+    padding-top: 20px;
+    width: 1300px;
+    text-align: justify;
+    padding-bottom: 40px;
+}
+
+.usb_content4_1{
+    border: solid 2px black;
+    border-radius: 15px;
+    width: 600px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+
+
+
+/*FIM USB*/
+
+
+/*ABOUT*/
+
+.main_about{
+    background-color: white;
+}
+
+.titulos_about{
+    margin-top: 30px;
+}
+
+.titulo_about{
+    width: 550px;
+    text-align: justify;
+    color: #000;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.subtitulo_about{
+    width: 550px;
+    text-align: justify;
+    color: #000;
+    margin-top: 40px;
+}
+
+#section_about{
+    width: 1300px;
+    margin: 40px auto;
+    font-weight: 500;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+/*FIM ABOUT*/
+
+/*INICIO COMENTARIOS*/
+
+.conteudo_com1{
+    margin-top: 140px;
+    text-align: center;
+}
+
+.conteudo_com2{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.h1_com{
+    text-align: justify;
+    margin-left: 310px;
+}
+
+select{
+    margin-top: 20px;
+    height: 50px;
+    width: 900px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: solid 2px black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+textarea{
+    margin: 20px auto;
+    width: 900px;
+    border: solid 2px black;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: justify;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 1.1em;
+    resize: none;
+}
+
+.input1{
+    margin-right: 40px;
+    height: 40px;
+    border-radius: 15px;
+    width: 100px;
+    background-color: #000;
+    color: whitesmoke;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.input2{
+    height: 40px;
+    border-radius: 15px;
+    width: 100px;
+    background-color: #000;
+    color: whitesmoke;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.input1:hover, .input2:hover{
+    background-color: white;
+    color: #000;
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.rodape_com{
+    background: linear-gradient(to bottom, #8b0000, #000);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    height: 300px;
+    margin-top: 50px;
+    border-radius: 15px 15px 0 0;
+}
+
+.rodape_com div ul{
+    margin-top: 10px;
+}
+
+.rodape_com div ul li{
+    padding: 3px;
+}
+
+.rodape_com div ul li a{
+    color: whitesmoke;
+}
+
+.rodape_com div ul li a:hover{
+    transition: 0.3s;
+    box-shadow: 4px 4px gray;
+}
+
+.copy_rodape_com{
+    background-color: #000;
+    height: 50px;
+}
+
+.copy_rodape_com p{
+    color: white;
+    text-align: center;
+}
+
+
+/*FIM COMENTÁRIOS*/
+
+
+
+
+
+
+
+/* PARTE RESPONSIVA */
+
+.menu-icons{
+    display: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.menu-mobile .icon-close{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color:  #000;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.menu-mobile{
+    background-color: red;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: 100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s;
+    z-index: 10;
+}
+
+.menu-mobile.ativo{
+    right: 0;
+}
+
+
+@media (max-width: 700px){
+
+    header nav ul{
+        display: none;
+    }
+
+    header nav span{
+        display: none;
+    }
+
+    button{
+        color: whitesmoke;
+    }
+
+    button:hover{
+        border: none;
+    }
+
+    .menu-icons{
+        display: block;
+        font-size: 30px;
+    }
+
+    .menu-mobile li{
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-mobile li a{
+        font-size: 10pt;
+        color: #000;
+        font-weight: 700;
+    }
+
+    main{
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .titulos .titulo, .titulos .subtitulo{
+        width: auto;
+        font-size: 1.2em;
+        margin: 20px auto;
+        padding-top: 30px;
+    }
+
+    .image_main{
+       display: none;
+    }
+
+    .newsletter{
+        margin: 0 auto 0 auto;
+        width: 100vw;
+    }
+
+    .newsletter .text_newsletter{
+        font-size: 10pt;
+    }
+
+    .newsletter .email_newsletter, .newsletter .botao_newsletter{
+        margin: 0 auto 0 auto;
+    }
+
+    .conteudo_principal_iphone{
+        display: block;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .conteudo_principal_iphone .iphone_content{
+        width: auto;
+    }
+
+    .carac_iphone{
+        width: 550px;
+    }
+
+    .conteudo_principal_iphone .iphone_content .iphone_image{
+        width: auto;
+        height: 200px;
+    }
+
+    .conteudo_principal_samsung{
+        height: auto;
+    }
+
+    .carac_samsung{
+        display: block;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .samsung_carac{
+        width: 550px;
+    }
+    
+.vere_principal{
+    padding: 20px 60px;
+}
+
+.utp_image{
+    display: none;
+}
+
+.utp_content1{
+    margin: 10px auto;
+}
+
+.utp_content2{
+    margin: 10px auto;
+}
+
+.utp_content3{
+    margin: 10px auto;
+    height: auto;
+}
+
+.utp_content4{
+    margin: auto;
+}
+
+.utp_content5{
+    margin: auto;
+    width: 700px;
+    text-align: justify;
+}
+
+.utp_content6{
+    margin: 210px auto 0 auto;
+    width: 700px;
+}
+
+.utp_principal1{
+    display: block;
+    flex-direction: column;
+    width: auto;
+}
+
+.utp_principal2{
+    display: block;
+    flex-direction: column;
+}
+
+.utp_principal3{
+    display: block;
+    flex-direction: column;
+}
+
+    .rodape{
+        width: 700px;
+        font-size: 70%;
+        height: 250px;
+        padding: 0 20px;
+    }
+
+    .rodape ul li{
+        margin: 8px 0;
+    }
+
+    .rodape_sam_iph{
+        width: 700px;
+        font-size: 70%;
+        height: 250px;
+        padding: 0 20px;
+    }
+
+    .rodape_sam_iph ul li{
+        margin: 8px 0;
+    }
+
+    .rodape_utp{
+        width: 700px;
+        font-size: 70%;
+        height: 250px;
+        padding: 0 20px;
+    }
+
+    .rodape_utp ul li{
+        margin: 8px 0;
+    }
+
+}
