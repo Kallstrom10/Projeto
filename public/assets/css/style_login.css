@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap'); */
 
  body{
-            font-family: Arial, sans-serif;
+            font-family: 'Raleway', sans-serif;
             background-color: #201b2c;
             margin: 0;
             padding: 0;
@@ -42,26 +42,31 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ccc;
+            border: 1px solid white;
             border-radius: 5px;
             box-sizing: border-box;
-            transition: 2s;
-            background-color: #201b2c;
+            background-color: gray;
+            transition: 0.5s;
+            /* background-color: #201b2c; */
             color: whitesmoke;
             font-weight: 700;
+            font-size:larger;
+            outline: none;
         }
 
-        button {
+        button{
             background-color: red;
             color: #fff;
-            border: 1px solid transparent;
+            border: 2px solid transparent;
             cursor: pointer;
+            font-size: 1.2em;
+            letter-spacing: 3px;
             transition: 0.8s;
         }
 
         button:hover {
             background-color: #fff;
-            border: 1px solid red;
+            border: 2px solid red;
             color: red;
             transition: 0.8s;
         }

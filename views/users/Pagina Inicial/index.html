@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../public/assets/css/style.css">
-    <link rel="stylesheet" href="../../../assets/css/style_dark-mode.css">
+    <link rel="stylesheet" href="../../../public/assets/css/style_dark-mode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="../../../public/assets/img/faviicon2.jpg" type="image/png">
     <script src="../../../public/assets/js/script_dark_mode.js" defer></script>
@@ -33,7 +33,15 @@
                     <a href="../SSD vs HDD vs eMMC/index.html">SSD vs HDD vs eMMC</a>
                     <a href="../Tipos de cabos USB/index.html">Tipos de USB</a>
                     <hr>
-                    <a href="../Comentários/index.html">Comente</a>
+                    <a href="../comentarios/index.html">Comente</a>
+                </div>
+            </span>
+            <span class="dropdown">
+                <li><a href="#">+ Opções</a></li>
+                <div class="dropbuttom_content">
+                    <a href="../listar-usuarios/index.html">Listar Usuários</a>
+                    <a href="../listar-comentarios/index.html">Listar comentários</a>
+                    <a href="../newsletter/listar/index.html">Listar emails no newsletter</a>
                 </div>
             </span>
         </ul>
@@ -42,7 +50,7 @@
 
         <span>
 
-            <button id="change_theme" onclick="alternarTema()">Alterar Tema</button>
+            <button id="change_theme" onclick="alternarTema()">Aterar Tema</button>
     
         </span>
 
@@ -62,9 +70,9 @@
     <li><a href="../SSD vs HDD vs eMMC/index.html">SSD vs HDD vs eMMC</a></li>
     <li><a href="../Tipos de cabos USB/index.html">Tipos de USB</a></li>
     <hr>
-    <li><a href="../Cadastro/index.html">Cadastre-se</a></li>
+    <li><a href="../">Cadastre-se</a></li>
     <li><a href="../Login/index.html">Login</a></li>
-    <li><a href="../Comentários/index.html">Comente</a></li>
+    <li><a href="../comentarios/index.html">Comente</a></li>
     <hr> <br> <br>
     <button onclick="alternarTema()">Alterar Tema</button>
 </ul>  
@@ -101,19 +109,18 @@
 
    
      <!-- NEWSLETTER -->
-    <div class="newsletter">
+    <div id="newsletter">
 
         <span class="text_newsletter" id="text"></span> 
+         <form action="/newsletter" method="post">
+             <label for="email">
+                 <input class="email_newsletter" type="email" name="email" placeholder="Enter your e-mail">
+             </label>
+         </form>
 
-        <span>
-            <input class="email_newsletter" type="email" name="e-mail" placeholder="Enter your e-mail">
-        </span>
-
-        <form>
-            <span>
                 <input class="botao_newsletter" type="submit" name="enviar" value="Subscribe">
-            </span>
-        </form>
+    
+   
 
     </div>
     <!-- FIM NEWSLETTER -->
@@ -129,9 +136,9 @@
             <ul>
                 <li><a href="../Página Inicial/index.html">Home</a></li>
                 <li><a href="../Login/index.html">Login</a></li>
-                <li><a href="../Cadastro/index.html">Cadastre-se</a></li>
+                <li><a href="../">Cadastre-se</a></li>
                 <li><a href="../About/index.html">About</a></li>
-                <li><a href="../Comentários/index.html">Faça o seu comentário</a></li>
+                <li><a href="../comentarios/index.html">Faça o seu comentário</a></li>
             </ul>
         </div>
 

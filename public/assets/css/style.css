@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap'); */
 
 *{
     list-style: none;
@@ -109,6 +109,7 @@ header{
     z-index: 3;
     overflow: hidden;
     max-height: 0;
+    transition: 0.5s;
 }
 
 .dropbuttom_content  a{
@@ -135,6 +136,7 @@ header{
     max-height: 500px;
     animation: moveToBottom 0.5s ease-in-out;
     padding: 4px 0;
+    transition: 0.5s;
 }
 
 .dropbuttom_content a:hover{
@@ -210,7 +212,7 @@ main{
 }
 
 
-.newsletter{
+#newsletter{
     background-color: red;
     border-radius: 10px;
     margin: 20px 330px;
