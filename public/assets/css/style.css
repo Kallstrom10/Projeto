@@ -232,7 +232,7 @@ main{
     padding-right: 100px;
     border-radius: 15px;
     height: 35px;
-    margin-left: 170px;
+    margin-left: 150px;
     background-color: darkgray;
     font-weight: bolder;
     padding: 5px;
@@ -242,7 +242,7 @@ main{
 
 .email_newsletter:hover{
     transform: scaleX(1.1);
-    margin-right: 8px;
+    margin: 0 8px;
     outline: none;
 }
 
@@ -251,6 +251,7 @@ main{
     height: 35px;
     cursor: pointer;
     margin-right: 60px;
+    margin-left: 60px;
     background-color: #000;
     color: whitesmoke;
     padding: 5px;
@@ -431,7 +432,7 @@ h4{
 }
 
 .samsung_image:hover{
-    box-shadow: 10px 10px #000;
+    box-shadow: 10px 10px rgb(48, 48, 48);
 }
 
 .samsung_carac{
@@ -1945,7 +1946,7 @@ textarea{
     }
 
     button{
-        color: whitesmoke;
+        color: red;
     }
 
     button:hover{
@@ -1984,17 +1985,17 @@ textarea{
        display: none;
     }
 
-    .newsletter{
+    #newsletter{
         margin: 0 auto 0 auto;
         width: 100vw;
     }
 
-    .newsletter .text_newsletter{
+    #newsletter .text_newsletter{
         font-size: 10pt;
     }
 
-    .newsletter .email_newsletter, .newsletter .botao_newsletter{
-        margin: 0 auto 0 auto;
+    #newsletter .email_newsletter, .newsletter .botao_newsletter{
+        margin: 0 auto;
     }
 
     .conteudo_principal_iphone{

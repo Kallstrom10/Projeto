@@ -64,16 +64,16 @@ app.get('/Hubs%20vs%20Switches/index.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'users', 'Hubs vs Switches', 'index.html'));
 });
 
-app.get('/INTEL%20EVO/index.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'users', 'INTEL EVO', 'index.html'));
+app.get('/intoL%20EVO/index.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'users', 'intoL EVO', 'index.html'));
 });
 
 app.get('/Login/index.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'users', 'Login', 'index.html'));
 });
 
-app.get('/Processadores%20INTEL/index.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'users', 'Processadores INTEL', 'index.html'));
+app.get('/Processadores%20intoL/index.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'users', 'Processadores intoL', 'index.html'));
 });
 
 app.get('/Roteadores/index.html', (req, res) => {
@@ -92,8 +92,8 @@ app.get('/P%C3%A1gina%20Inicial/index.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'users', 'Pagina Inicial', 'index.html'));
 });
 
-app.get('/listar-usuarios/index.html', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'users', 'listar-usuarios', 'index.html'));
+app.get('/listar-newsletter/index.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'users', 'listar-newsletter', 'index.html'));
 });
 
 app.get('/newsletter/listar/index.html', (req, res) => {
@@ -104,6 +104,14 @@ app.get('/listar-comentarios/index.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'users', 'listar-comentarios', 'index.html'));
 });
 
+app.get('/listar-usuarios/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'users', 'listar-usuarios', 'index.html'));
+});
+
+app.get('/editar-usuario/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'users', 'editar-usuario', 'index.html'));
+});
+
 
 // ----------------------------- ROTAS ---------------------------------
 
@@ -111,7 +119,7 @@ app.get('/listar-comentarios/index.html', (req, res) => {
 app.post('/Login', (req, res) => {
     const { email, senha } = req.body;
 
-    const sql = 'SELECT id, primeiro_nome FROM usuarios WHERE email = ? AND senha = ?';
+    const sql = 'select id, primeiro_nome from usuarios where email = ? and senha = ?';
     connection.query(sql, [email, senha], (err, results) => {
         if (err) {
             console.error('Erro ao buscar usuário: ' + err.stack);
@@ -125,35 +133,49 @@ app.post('/Login', (req, res) => {
         // Salvando o ID do usuário na sessão
         req.session.userId = results[0].id;
         req.session.userName = results[0].primeiro_nome;
-
+        
         res.redirect('/');
     });
 });
 
-  // Listar Email do newsletter
+  // Listar usuários
   app.get('/usuarios', (req, res) => {
-    const sql = 'SELECT * FROM usuarios';
+    const sql = 'select * from usuarios';
     connection.query(sql, (err, results) => {
       if (err) throw err;
       res.json(results);
     });
   });
 
-  // Atualizar Email do newsletter
+// Rota para obter dados do usuário por ID
+app.get('/usuarios/:id', (req, res) => {
+  const { id } = req.params;
+  const sql = 'select * from usuarios where id = ?';
+  connection.query(sql, [id], (err, result) => {
+    if (err) throw err;
+    if (result.length === 0) {
+      res.status(404).json({ error: 'Usuário não encontrado' });
+    } else {
+      res.json(result[0]);
+    }
+  });
+});
+
+  // Atualizar usuários
   app.put('/usuarios/:id', (req, res) => {
     const { id } = req.params;
     const { primeiro_nome, ultimo_nome, email, senha } = req.body;
-    const sql = 'UPDATE usuarios SET primeiro_nome = ?, ultimo_nome = ?, email = ?, senha = ? WHERE id = ?';
+    const sql = 'UPDATE usuarios SET primeiro_nome = ?, ultimo_nome = ?, email = ?, senha = ? where id = ?';
     connection.query(sql, [primeiro_nome, ultimo_nome, email, senha, id], (err, result) => {
       if (err) throw err;
       res.send('Usuário atualizado com sucesso!');
     });
   });
   
-  // Deletar Email do newsletter
+  // Deletar usuário
   app.delete('/usuarios/:id', (req, res) => {
     const { id } = req.params;
-    const sql = 'DELETE FROM usuarios WHERE id = ?';
+    const sql = 'DELETE from usuarios where id = ?';
     connection.query(sql, [id], (err, result) => {
       if (err) throw err;
       res.send('Usuário deletado com sucesso!');
@@ -163,27 +185,56 @@ app.post('/Login', (req, res) => {
 
 
 // NEWSLETTER   
-app.post('/newsletter', (req, res) =>{
-    const { email } = req.body;
-    const usuarioId = req.session.userId;
+app.post('/newsletter', (req, res) => {
+  const { email } = req.body;
+  console.log('Dados recebidos:', req.body); // Log para verificar os dados recebidos
 
-    const sql = 'INSERT INTO newsletter (email, id_usuario) VALUES (?, ?)';
-    connection.query(sql, [email, usuarioId], (err, result) => {
-        if (err) {
-            console.error('Erro ao se cadastrar no nosso newsletter.');
-            return res.status(500).send('Erro ao se cadastrar no newsletter.');
-        }
-        console.log('Email cadastrado com sucesso!');
-        res.redirect('/');
-    });
+  // Verificar se o email já está em uso
+  let sql = 'select id from newsletter where email = ?';
+  connection.query(sql, [email], (err, results) => {
+      if (err) {
+          console.error('Erro ao buscar Email do usuário: ' + err.stack);
+          return res.status(500).send('Erro ao realizar o cadastro.');
+      }
+
+      if (results.length > 0) {
+          return res.status(400).send('E-mail já está cadastrado.');
+      }
+
+      // Inserir Email do newsletter no banco de dados
+      const sql = 'insert into newsletter (email) values (?)';
+      connection.query(sql, [email], (err, result) => {
+          if (err) {
+              console.error('Erro ao inserir email ao newsletter: ' + err.stack);
+              return res.status(500).send('Erro ao realizar o cadastro.');
+          }
+          console.log('Email cadastrado com sucesso!');
+          
+          res.redirect('/');
+      });
+  });
 });
 
-  // Listar Email do newsletters
+  // Listar Email do newsletter
   app.get('/newsletter', (req, res) => {
-    const sql = 'SELECT * FROM newsletter';
+    const sql = 'select * from newsletter';
     connection.query(sql, (err, results) => {
       if (err) throw err;
       res.json(results);
+    });
+  });
+
+  // Rota para pegar o email do newsletter por ID
+  app.get('/newsletter/:id', (req, res) => {
+    const { id } = req.params;
+    const sql = 'select * from newsletter where id = ?';
+    connection.query(sql, [id], (err, result) => {
+      if (err) throw err;
+      if (result.length === 0) {
+        res.status(404).json({ error: 'Email não encontrado' });
+      } else {
+        res.json(result[0]);
+      }
     });
   });
 
@@ -191,7 +242,7 @@ app.post('/newsletter', (req, res) =>{
   app.put('/newsletter/:id', (req, res) => {
     const { id } = req.params;
     const { email } = req.body;
-    const sql = 'UPDATE newsletter SET email = ? WHERE id = ?';
+    const sql = 'UPDATE newsletter SET email = ? where id = ?';
     connection.query(sql, [email, id], (err, result) => {
       if (err) throw err;
       res.send('Email do newsletter atualizado com sucesso!');
@@ -201,7 +252,7 @@ app.post('/newsletter', (req, res) =>{
   // Deletar Email do newsletter
   app.delete('/newsletter/:id', (req, res) => {
     const { id } = req.params;
-    const sql = 'DELETE FROM newsletter WHERE id = ?';
+    const sql = 'DELETE from newsletter where id = ?';
     connection.query(sql, [id], (err, result) => {
       if (err) throw err;
       res.send('Email do newsletter deletado com sucesso');
@@ -218,7 +269,7 @@ app.post('/comentarios', (req, res) => {
         return res.status(401).send('Usuário não autenticado.');
     }
 
-    const sql = 'INSERT INTO comentarios_temas (usuario_id, tema, comentario) VALUES (?, ?, ?)';
+    const sql = 'insert into comentarios_temas (usuario_id, tema, comentario) values (?, ?, ?)';
     connection.query(sql, [usuarioId, tema, comentario], (err, result) => {
         if (err) {
             console.error('Erro ao inserir comentário sobre tema: ' + err.stack);
@@ -229,30 +280,44 @@ app.post('/comentarios', (req, res) => {
     });
 });
 
-  // Listar usuários
-  app.get('/comentarios', (req, res) => {
-    const sql = 'SELECT * FROM comentarios_temas';
-    connection.query(sql, (err, results) => {
-      if (err) throw err;
-      res.json(results);
-    });
+// Rota para obter comentários com dados dos usuários
+app.get('/comentarios', (req, res) => {
+  const sql = 'select comentarios_temas.id, comentarios_temas.tema, comentarios_temas.comentario, usuarios.primeiro_nome, usuarios.ultimo_nome from comentarios_temas JOIN usuarios ON comentarios_temas.usuario_id = usuarios.id';
+  connection.query(sql, (err, result) => {
+    if (err) throw err;
+    res.json(result);
   });
+});
 
-  // Atualizar usuário
+// Rota pra pegar comentários por ID
+app.get('/comentarios/:id', (req, res) => {
+  const { id } = req.params;
+  const sql = 'select * from comentarios_temas where id = ?';
+  connection.query(sql, [id], (err, result) => {
+    if (err) throw err;
+    if (result.length === 0) {
+      res.status(404).json({ error: 'Cometário não encontrado' });
+    } else {
+      res.json(result[0]);
+    }
+  });
+});
+
+  // Atualizar comentário
   app.put('/comentarios/:id', (req, res) => {
     const { id } = req.params;
     const { comentario } = req.body;
-    const sql = 'UPDATE comentarios_temas SET comentario = ? WHERE id = ?';
+    const sql = 'UPDATE comentarios_temas SET comentario = ? where id = ?';
     connection.query(sql, [comentario, id], (err, result) => {
       if (err) throw err;
       res.send('Comentário atualizado com sucesso');
     });
   });
   
-  // Deletar usuário
+  // Deletar comentário
   app.delete('/comentarios/:id', (req, res) => {
     const { id } = req.params;
-    const sql = 'DELETE FROM comentarios_temas WHERE id = ?';
+    const sql = 'DELETE from comentarios_temas where id = ?';
     connection.query(sql, [id], (err, result) => {
       if (err) throw err;
       res.send('Comentário deletado com sucesso');
@@ -265,7 +330,7 @@ app.post('/comentarios', (req, res) => {
 //     const {  comentario } = req.body;
 
     // // Verificar se o Email do newsletter já existe no banco de dados
-    // let sql = 'SELECT id FROM newsletter WHERE email = ?';
+    // let sql = 'select id from newsletter where email = ?';
     // connection.query(sql, [email], (err, results) => {
     //     if (err) {
     //         console.error('Erro ao buscar Email do newsletter: ' + err.stack);
@@ -277,7 +342,7 @@ app.post('/comentarios', (req, res) => {
     //         id_usuario = results[0].id;
     //     } else {
     //         // Se o Email do newsletter não existe, inseri-lo no banco de dados
-    //         sql = 'INSERT INTO newsletter (nome, email) VALUES (?, ?)';
+    //         sql = 'insert into newsletter (nome, email) values (?, ?)';
     //         connection.query(sql, [nome, email], (err, result) => {
     //             if (err) {
     //                 console.error('Erro ao inserir Email do newsletter: ' + err.stack);
@@ -288,7 +353,7 @@ app.post('/comentarios', (req, res) => {
         // }
 
         // Inserir comentário sobre o site no banco de dados
-    //     sql = 'INSERT INTO comentarios_site (comentario) VALUES (?)';
+    //     sql = 'insert into comentarios_site (comentario) values (?)';
     //     connection.query(sql, [comentario], (err, result) => {
     //         if (err) {
     //             console.error('Erro ao inserir comentário sobre o site: ' + err.stack);
@@ -307,7 +372,7 @@ app.post('/Cadastro', (req, res) => {
     console.log('Dados recebidos:', req.body); // Log para verificar os dados recebidos
 
     // Verificar se o email já está em uso
-    let sql = 'SELECT id FROM usuarios WHERE email = ?';
+    let sql = 'select id from usuarios where email = ?';
     connection.query(sql, [email], (err, results) => {
         if (err) {
             console.error('Erro ao buscar Email do usuário: ' + err.stack);
@@ -319,10 +384,10 @@ app.post('/Cadastro', (req, res) => {
         }
 
         // Inserir Email do newsletter no banco de dados
-        const sql = 'INSERT INTO usuarios (primeiro_nome, ultimo_nome, email, senha) VALUES (?, ?, ?, ?)';
+        const sql = 'insert into usuarios (primeiro_nome, ultimo_nome, email, senha) values (?, ?, ?, ?)';
         connection.query(sql, [primeiro_nome, ultimo_nome, email, senha], (err, result) => {
             if (err) {
-                console.error('Erro ao inserir Email do newsletter: ' + err.stack);
+                console.error('Erro ao inserir o email do usuário: ' + err.stack);
                 return res.status(500).send('Erro ao realizar o cadastro.');
             }
             console.log('Usuário cadastrado com sucesso!');

@@ -56,10 +56,11 @@ body {
   }
   
   .usuario-card {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 10px;
     width: 500px;
-    text-align: center;border-radius: 15px;
+    text-align: center;
+    border-radius: 15px;
     background-color: rgba(104, 104, 104, 0.5);
   }
   
@@ -71,7 +72,7 @@ body {
   }
   
   .newsletter-card {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     padding: 10px;
     width: 500px;
     text-align: center;border-radius: 15px;
@@ -86,11 +87,26 @@ body {
   }
   
   .comentarios-card {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc;  */
     padding: 10px;
     width: 500px;
-    text-align: center;border-radius: 15px;
+    text-align: center;
+    border-radius: 15px;
     background-color: rgba(104, 104, 104, 0.5);
   }
 
+  #strong{
+    color: red;
+    background-color: rgba(237, 237, 237, 0.5);
+    padding: 6px;
+    border-radius: 15px;
+  }
 
+  #strong1{
+    color: red;
+    background-color: rgba(237, 237, 237, 0.5);
+    padding: 6px;
+    border-radius: 15px;
+    margin: 0 80px;
+    font-weight: bolder;
+  }

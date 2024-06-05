@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+  <title>Editar Usuário</title>
+  <link rel="stylesheet" href="../../../public/assets/css/style_login.css">
+  <script>
+    function carregarDadosUsuario() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id');
+
+      // Solicitar os dados atuais do usuário
+
+          // Preencher o formulário com os dados atuais do usuário
+          document.getElementById('primeiro_nome').value
+          document.getElementById('ultimo_nome').value 
+          document.getElementById('email').value 
+          document.getElementById('senha').value 
+
+          // Armazenar o ID do usuário em um atributo de dados do formulário
+          document.getElementById('form-editar-usuario').dataset.userId = id;
+        }
+
+    function salvarEdicaoUsuario() {
+      const form = document.getElementById('form-editar-usuario');
+      const id = form.dataset.userId;
+
+      const novoNome = document.getElementById('primeiro_nome').value;
+      const novoSobrenome = document.getElementById('ultimo_nome').value;
+      const novoEmail = document.getElementById('email').value;
+      const novaSenha = document.getElementById('senha').value;
+
+      fetch(`/usuarios/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ primeiro_nome: novoNome, ultimo_nome: novoSobrenome, email: novoEmail, senha: novaSenha })
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert(data);
+        window.location.href = '/listar-usuarios/index.html';
+      });
+    }
+
+    function cancelarEdicaoUsuario() {
+      window.history.back(); // Voltar para a página anterior
+    }
+    
+    window.onload = carregarDadosUsuario;
+  </script>
+</head>
+<body>
+    <!-- Formulário de edição de usuário -->
+    <div class="container1">
+      <h1>Editar Usuário</h1>
+      <form id="form-editar-usuario">
+        <label for="primeiro_nome">Nome:</label>
+        <input type="text" id="primeiro_nome" name="primeiro_nome"><br><br>
+        
+        <label for="ultimo_nome">Sobrenome:</label>
+        <input type="text" id="ultimo_nome" name="ultimo_nome"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha"><br><br>
+        
+        <button type="button" onclick="salvarEdicaoUsuario()">Salvar</button> 
+        <button type="button" onclick="cancelarEdicaoUsuario()">Cancelar</button>
+      </form>
+  </div>
+</body>
+</html>
